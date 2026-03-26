@@ -75,17 +75,17 @@ const LeadForm = ({ id }: LeadFormProps) => {
   }
 
   return (
-    <form id={id} onSubmit={handleSubmit} className="bg-background rounded-lg p-6 md:p-8 shadow-elevated">
+    <form id={id} onSubmit={handleSubmit} className="bg-background rounded-b-lg p-6 md:p-8 shadow-card">
       {/* Progress bar */}
       <div className="flex items-center gap-2 mb-6">
         {[1, 2, 3].map((s) => (
           <div key={s} className="flex-1 flex flex-col items-center gap-1">
             <div
               className={`h-2 w-full rounded-full transition-colors ${
-                s <= step ? "bg-accent" : "bg-muted"
+                s <= step ? "bg-primary" : "bg-muted"
               }`}
             />
-            <span className={`text-xs font-heading font-semibold ${s <= step ? "text-accent" : "text-muted-foreground"}`}>
+            <span className={`text-xs font-heading font-semibold ${s <= step ? "text-primary" : "text-muted-foreground"}`}>
               Step {s}
             </span>
           </div>
@@ -95,7 +95,7 @@ const LeadForm = ({ id }: LeadFormProps) => {
       <AnimatePresence mode="wait">
         {step === 1 && (
           <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
-            <h3 className="font-heading font-bold text-lg text-foreground mb-1">What service do you need?</h3>
+            <h3 className="font-heading font-bold text-lg text-secondary mb-1">What service do you need?</h3>
             <p className="text-sm text-muted-foreground mb-4">Select one to get started</p>
             <div className="grid grid-cols-1 gap-2">
               {serviceOptions.map((service) => (
@@ -123,7 +123,7 @@ const LeadForm = ({ id }: LeadFormProps) => {
               type="button"
               onClick={() => setStep(2)}
               disabled={!canProceedStep1}
-              className="w-full mt-4 bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold"
+              className="w-full mt-4"
             >
               Next Step →
             </Button>
@@ -132,7 +132,7 @@ const LeadForm = ({ id }: LeadFormProps) => {
 
         {step === 2 && (
           <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
-            <h3 className="font-heading font-bold text-lg text-foreground mb-1">Your Contact Info</h3>
+            <h3 className="font-heading font-bold text-lg text-secondary mb-1">Your Contact Info</h3>
             <p className="text-sm text-muted-foreground mb-4">We'll use this to schedule your free estimate</p>
             <div className="space-y-3">
               <div>
@@ -149,14 +149,14 @@ const LeadForm = ({ id }: LeadFormProps) => {
               </div>
             </div>
             <div className="flex gap-2 mt-4">
-              <Button type="button" variant="outline" onClick={() => setStep(1)} className="flex-1 font-heading font-semibold">
+              <Button type="button" variant="outline" onClick={() => setStep(1)} className="flex-1">
                 ← Back
               </Button>
               <Button
                 type="button"
                 onClick={() => setStep(3)}
                 disabled={!canProceedStep2}
-                className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold"
+                className="flex-1"
               >
                 Next Step →
               </Button>
@@ -166,7 +166,7 @@ const LeadForm = ({ id }: LeadFormProps) => {
 
         {step === 3 && (
           <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
-            <h3 className="font-heading font-bold text-lg text-foreground mb-1">Almost Done!</h3>
+            <h3 className="font-heading font-bold text-lg text-secondary mb-1">Almost Done!</h3>
             <p className="text-sm text-muted-foreground mb-4">Add any details about your project</p>
             <div className="space-y-3">
               <div>
@@ -187,10 +187,10 @@ const LeadForm = ({ id }: LeadFormProps) => {
               </div>
             </div>
             <div className="flex gap-2 mt-4">
-              <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1 font-heading font-semibold">
+              <Button type="button" variant="outline" onClick={() => setStep(2)} className="flex-1">
                 ← Back
               </Button>
-              <Button type="submit" className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold text-base">
+              <Button type="submit" className="flex-1 text-base">
                 Get My Free Estimate
               </Button>
             </div>
@@ -198,7 +198,6 @@ const LeadForm = ({ id }: LeadFormProps) => {
         )}
       </AnimatePresence>
 
-      {/* Hidden UTM fields */}
       {["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].map((field) => (
         <input key={field} type="hidden" name={field} value={form[field as keyof typeof form]} />
       ))}
