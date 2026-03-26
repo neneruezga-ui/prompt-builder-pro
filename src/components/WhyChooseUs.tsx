@@ -20,8 +20,8 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-3">
-            Why Choose <span className="text-accent">Prime Pro Painter?</span>
+          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-secondary mb-3">
+            Why Choose Prime Pro Painter?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We go above and beyond to deliver results that exceed your expectations.
@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
                 <item.icon className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-heading font-bold text-foreground mb-1">{item.title}</h3>
+                <h3 className="font-heading font-bold text-secondary mb-1">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             </motion.div>

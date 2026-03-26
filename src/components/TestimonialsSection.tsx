@@ -29,8 +29,8 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-3">
-            What Our <span className="text-primary">Customers Say</span>
+          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-secondary mb-3">
+            What Our Customers Say
           </h2>
         </motion.div>
 
@@ -44,14 +44,14 @@ const TestimonialsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="bg-background rounded-xl p-6 shadow-card"
             >
-              <Quote className="w-8 h-8 text-accent/30 mb-3" />
+              <Quote className="w-8 h-8 text-primary/20 mb-3" />
               <p className="text-foreground text-sm mb-4 leading-relaxed">"{t.text}"</p>
               <div className="flex items-center gap-1 mb-2">
                 {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="w-4 h-4 text-accent fill-current" />
+                  <Star key={j} className="w-4 h-4 text-primary fill-current" />
                 ))}
               </div>
-              <p className="font-heading font-bold text-foreground text-sm">{t.name}</p>
+              <p className="font-heading font-bold text-secondary text-sm">{t.name}</p>
               <p className="text-muted-foreground text-xs">{t.location}</p>
             </motion.div>
           ))}

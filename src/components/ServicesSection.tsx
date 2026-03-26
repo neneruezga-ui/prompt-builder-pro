@@ -25,8 +25,8 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-3">
-            Our <span className="text-primary">Services</span>
+          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-secondary mb-3">
+            Our Services
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From interior walls to exterior wood — we handle every painting project with precision and care.
@@ -54,7 +54,7 @@ const ServicesSection = () => {
                 />
               </div>
               <div className="p-5">
-                <h3 className="font-heading font-bold text-lg text-foreground mb-1">{service.title}</h3>
+                <h3 className="font-heading font-bold text-lg text-secondary mb-1">{service.title}</h3>
                 <p className="text-muted-foreground text-sm">{service.desc}</p>
               </div>
             </motion.div>

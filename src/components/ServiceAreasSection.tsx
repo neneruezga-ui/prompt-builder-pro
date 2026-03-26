@@ -2,18 +2,9 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
 const areas = [
-  "Mountain View",
-  "San Jose",
-  "Palo Alto",
-  "Sunnyvale",
-  "Santa Clara",
-  "Cupertino",
-  "Los Altos",
-  "Milpitas",
-  "Campbell",
-  "Saratoga",
-  "Los Gatos",
-  "Redwood City",
+  "Mountain View", "San Jose", "Palo Alto", "Sunnyvale",
+  "Santa Clara", "Cupertino", "Los Altos", "Milpitas",
+  "Campbell", "Saratoga", "Los Gatos", "Redwood City",
 ];
 
 const ServiceAreasSection = () => {
@@ -26,8 +17,8 @@ const ServiceAreasSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-3">
-            Serving the <span className="text-accent">Bay Area</span>
+          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-secondary mb-3">
+            Serving the Bay Area
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Proudly serving homeowners and businesses throughout the South Bay and surrounding communities.

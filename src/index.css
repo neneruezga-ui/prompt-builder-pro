@@ -18,28 +18,27 @@
     --primary: 214 76% 48%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 0 0% 13%;
+    --secondary: 214 51% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 14% 45%;
+    --muted: 214 30% 96%;
+    --muted-foreground: 0 0% 33%;
 
-    --accent: 24 100% 56%;
+    --accent: 214 76% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 214 20% 90%;
-    --input: 214 20% 85%;
+    --input: 214 20% 88%;
     --ring: 214 76% 48%;
 
     --radius: 0.5rem;
 
-    --hero-gradient: linear-gradient(135deg, hsl(214 76% 48%), hsl(214 76% 35%));
-    --section-alt: 210 25% 97%;
-    --shadow-card: 0 4px 24px -4px hsl(214 76% 48% / 0.12);
-    --shadow-elevated: 0 12px 40px -8px hsl(214 76% 48% / 0.2);
+    --section-alt: 214 30% 97%;
+    --shadow-card: 0 2px 16px -4px hsl(214 51% 25% / 0.08);
+    --shadow-elevated: 0 8px 30px -8px hsl(214 51% 25% / 0.14);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,13 +66,6 @@
 }
 
 @layer utilities {
-  .text-gradient-primary {
-    background: var(--hero-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .bg-section-alt {
     background-color: hsl(var(--section-alt));
   }
