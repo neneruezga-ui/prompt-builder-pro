@@ -15,6 +15,7 @@ const Index = () => {
       <StickyHeader />
       <HeroSection />
       <ServicesSection />
+      <ProjectGallerySection />
       <WhyChooseUs />
       <TestimonialsSection />
       <ServiceAreasSection />
