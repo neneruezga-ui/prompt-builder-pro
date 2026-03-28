@@ -41,7 +41,7 @@ const HeroSection = () => {
                   Get Free Estimate
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-white/30 text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" asChild className="border-white text-white bg-white/10 hover:bg-white/20">
                 <a href="tel:6509103998" className="text-base font-bold">
                   <Phone className="w-5 h-5 mr-2" />
                   (650) 910-3998
