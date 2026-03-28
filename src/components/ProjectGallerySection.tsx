@@ -3,18 +3,27 @@ import { motion } from "framer-motion";
 const projects = [
   {
     label: "Interior Painting",
-    before: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
   },
   {
     label: "Exterior Painting",
-    before: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
   },
   {
     label: "Cabinet Refinishing",
-    before: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-    after: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80",
+  },
+  {
+    label: "Interior Remodel",
+    img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+  },
+  {
+    label: "Exterior Refresh",
+    img: "https://images.unsplash.com/photo-1600566753376-12c8ab7a5a0c?w=800&q=80",
+  },
+  {
+    label: "Kitchen Cabinets",
+    img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
   },
 ];
 
@@ -29,52 +38,32 @@ const ProjectGallerySection = () => {
           className="text-center mb-12"
         >
           <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-secondary mb-3">
-            Our Recent Projects
+            Our Work
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            See the difference professional painting makes — real before &amp; after results from Bay Area homes.
+            Every job finished clean, on time, and exactly as quoted.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {projects.map((project, i) => (
             <motion.div
-              key={project.label}
+              key={project.label + i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="space-y-4"
+              transition={{ delay: i * 0.08 }}
+              className="group"
             >
-              <div className="grid grid-cols-2 gap-3">
-                <div className="space-y-2">
-                  <div className="overflow-hidden rounded-lg shadow-card">
-                    <img
-                      src={project.before}
-                      alt={`${project.label} before`}
-                      loading="lazy"
-                      className="w-full h-40 object-cover"
-                    />
-                  </div>
-                  <p className="text-xs font-heading font-bold text-muted-foreground uppercase tracking-wider text-center">
-                    Before
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <div className="overflow-hidden rounded-lg shadow-card">
-                    <img
-                      src={project.after}
-                      alt={`${project.label} after`}
-                      loading="lazy"
-                      className="w-full h-40 object-cover"
-                    />
-                  </div>
-                  <p className="text-xs font-heading font-bold text-primary uppercase tracking-wider text-center">
-                    After
-                  </p>
-                </div>
+              <div className="overflow-hidden rounded-xl shadow-card">
+                <img
+                  src={project.img}
+                  alt={project.label}
+                  loading="lazy"
+                  className="w-full h-40 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <p className="font-heading font-bold text-secondary text-center text-lg">
+              <p className="font-heading font-bold text-secondary text-sm md:text-base text-center mt-3">
                 {project.label}
               </p>
             </motion.div>
